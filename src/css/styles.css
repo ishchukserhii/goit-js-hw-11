@@ -17,27 +17,44 @@
 @import url('./back-link.css');
 @import url('./footer.css');
 
-.timer{
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 10px;
+.btn-search{
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+  font-family: "Montserrat", sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0.04em;
+color: #fff;
+border: none;
 }
-.field{
+.searchForm{
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 8px;
   justify-content: center;
+  margin-top: 36px;
 }
-.value{
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 18px; 
+.bookSearch{
+
+border: 1px solid #808080;
+border-radius: 4px;
+width: 252px;
+height: 36px;
+font-family: "Montserrat", sans-serif;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+letter-spacing: 0.04em;
+color: #808080;
+padding-left: 16px;
 }
-.label{
-  display: flex;
-  justify-content: center;
-}
-.form{
-  max-width: 251px;
+/* .bookSearch :hover{
+  border: #000;
+} */
+.bookSearch :enabled{
+  border: #4e75ff;
 }
