@@ -31,6 +31,9 @@ letter-spacing: 0.04em;
 color: #fff;
 border: none;
 }
+.btn-search:focus{
+  background: #6c8cff;
+}
 .searchForm{
   display: flex;
   align-items: center;
@@ -39,7 +42,6 @@ border: none;
   margin-top: 36px;
 }
 .bookSearch{
-
 border: 1px solid #808080;
 border-radius: 4px;
 width: 252px;
