@@ -8,12 +8,17 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
+const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: 250,
+});
 
 const refs = {
     btn : document.querySelector('.btn-search'),
     form : document.querySelector('.search-form'),
-    msg : document.querySelector('.msg'),
     gallery : document.querySelector('.gallery'),
+    loader: document.querySelector('.msg'),
 }
 
 
@@ -21,7 +26,7 @@ const refs = {
 refs.form.addEventListener('submit', (e)=>{
     e.preventDefault()
     let searchText = e.target.elements.bookSearch.value.trim();
-
+    refs.gallery.innerHTML = '';
     if(searchText === ''){
         iziToast.show ({
             backgroundColor: 'rgba(255, 67, 67, 0.68)',
@@ -35,6 +40,7 @@ refs.form.addEventListener('submit', (e)=>{
         });
         return}
         else{
+            refs.loader.innerHTML = '<span class="loader"></span>';
             getImg (searchText)
             .then(res => {
                 if (res.data.hits.length === 0){
@@ -49,20 +55,26 @@ refs.form.addEventListener('submit', (e)=>{
                             message: 'Sorry, there are no images matching your search query. Please try again!'
                         }
                     )
+                    refs.loader.innerHTML = ''
                 }
                 else{
-                    createElemets(res.data.hits);
                     const pushGallery = createElemets(res.data.hits);
                     refs.gallery.innerHTML = pushGallery;
+                    lightbox.refresh();
+                    refs.loader.innerHTML = ''
                 }
+            })
+            .catch(error => {
+                refs.loader.innerHTML = 'Охохо.....щось пішло не так....';
+                console.log(error);
             })
         }
     })
 
-    new SimpleLightbox('.gallery-link', {
-        captionsData: 'alt',
-        captionPosition: 'bottom',
-        captionDelay: 250,
-    });
+
+
+
+
+
 
 

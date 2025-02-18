@@ -14,7 +14,6 @@ export function getImg (searchName) {
         orientation: 'horizontal',
         safesearch: 'true',
     });
-  
     const url = baseUrl + endPoint + `?${params}`;
     return axios.get(url)
 

@@ -1,12 +1,15 @@
+
 const refs = {
   gallery: document.querySelector('.gallery'),
 };
 
 function createElemet(img) {
   return `<li>
-  <a class="gallery-link" href="${img.largeImageURL}">
+ 
   <div class="card">
+   <a class="gallery-link" href="${img.largeImageURL}">
   <img class="card-img" src="${img.webformatURL}" alt="${img.tags}"/>
+  </a>
   <div class="card-info">
   <div class="info-container">
     <div class="info-labels">
@@ -23,10 +26,14 @@ function createElemet(img) {
     </div>
   </div>
 </div>
-</a>
+
 </li>`
 }
 
 export function createElemets(images) {
   return images.map(createElemet).join('');
 }
+
+
+
+
