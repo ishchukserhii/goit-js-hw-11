@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const baseUrl = "https://pixabay.com";
+const baseUrl = "http://pixabay.com";
 const endPoint = "/api";
 
 
