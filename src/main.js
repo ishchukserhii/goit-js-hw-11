@@ -38,6 +38,7 @@ refs.form.addEventListener('submit', (e)=>{
             titleSize: '16px',
             message: 'Поле пошуку порожнє'
         });
+        refs.form.reset();
         return}
         else{
             refs.loader.innerHTML = '<span class="loader"></span>';
@@ -68,6 +69,7 @@ refs.form.addEventListener('submit', (e)=>{
             .catch(error => {
                 refs.loader.innerHTML = 'Охохо.....щось пішло не так....';
                 console.log(error);
+                refs.form.reset();
             })
         }
         refs.form.reset()
