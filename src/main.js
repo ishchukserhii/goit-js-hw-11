@@ -42,6 +42,7 @@ refs.form.addEventListener('submit', (e)=>{
         else{
             refs.loader.innerHTML = '<span class="loader"></span>';
             getImg (searchText)
+
             .then(res => {
                 if (res.data.hits.length === 0){
                     iziToast.show(
@@ -69,6 +70,7 @@ refs.form.addEventListener('submit', (e)=>{
                 console.log(error);
             })
         }
+        refs.form.reset()
     })
 
 
