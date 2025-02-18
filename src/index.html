@@ -11,10 +11,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <form class="searchForm">
-      <input type="text" name="bookSearch" class="bookSearch"  placeholder="Search images..."/>
+    <header>
+      <div class="msg"></div>
+    <form class="search-form">
+      <input type="text" name="bookSearch" class="search-input"  placeholder="Search images..."/>
     <button type="submit" class="btn-search">Search</button>
     </form>
+  </header>
+    <main>
+      <ul class="gallery"></ul>
+  </main>
     <script type="module" src="./main.js"></script>
+    <script type="module" src="./js/pixabay-api.js"></script>
+    <script type="module" src="./js/render-functions.js"></script>
   </body>
 </html>
+
+
