@@ -38,7 +38,6 @@ refs.form.addEventListener('submit', (e)=>{
             titleSize: '16px',
             message: 'Поле пошуку порожнє'
         });
-        refs.form.reset();
         return}
         else{
             refs.loader.innerHTML = '<span class="loader"></span>';
@@ -64,15 +63,24 @@ refs.form.addEventListener('submit', (e)=>{
                     refs.gallery.innerHTML = pushGallery;
                     lightbox.refresh();
                     refs.loader.innerHTML = ''
+                    refs.form.reset()
                 }
             })
             .catch(error => {
-                refs.loader.innerHTML = 'Охохо.....щось пішло не так....';
+                refs.loader.innerHTML = '';
+                iziToast.show(
+                    { backgroundColor: 'rgba(255, 67, 67, 0.68)',
+                        messageColor: `rgba(255, 255, 255, 1)`,
+                        close: `true`,
+                        position: "topRight",
+                        title: '🚫',
+                        titleColor: '#fff',
+                        titleSize: '16px',
+                        message: 'Охохо.....щось пішло не так....'
+                    })
                 console.log(error);
-                refs.form.reset();
             })
         }
-        refs.form.reset()
     })
 
 
